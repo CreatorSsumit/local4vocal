@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import articles from "./itm_reduce"
+import businessinfo from "./itm_reduce"
 const RootReducers = combineReducers({
-articles
+businessinfo
 })
 
 export default RootReducers

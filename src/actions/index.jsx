@@ -1,26 +1,53 @@
 
+import axios from "axios"
 
-// export function othernews(){
-//     const request = fetch(`${url}/articles?_order=desc&_start=3&_end=10`,{
-//         method:'GET'
-//     }).then(res => res.json())
+export async function showbusinessdetails(){
+    var userArr = [] ;
+
+const {data} = await axios.get('https://react-crud-9f4ad.firebaseio.com/businessdata.json')
+
+  
+for (const key in data){
+    userArr.push({
+             datas:data[key],
+             key:key
+           })
     
-//     return{
-        
-//         type:'GET_OTHER',
-//         payload:request
+}
+     return{
     
-//     }}
+        type:'GET_DETAILS',
+        payload:userArr
+    
+    }
+  
+ 
 
-//  import firebasedb from "../firebase/index";
-
-
-//  export function showbusinessdetails(){
+//     axios.get('https://react-crud-9f4ad.firebaseio.com/businessdata.json').then(
    
-//      return{
-        
-//                type:'GET_Details',
-//                payload:null
+//  ({data}) => {
+
+  
+ 
+//    for (const key in data){
+//    userArr.push({
+//      datas:data[key],
+//      key:key
+//    })
+ 
 //  }
-//  }
-    
+
+ 
+// }
+
+
+// )
+
+
+ 
+
+
+
+
+
+   }

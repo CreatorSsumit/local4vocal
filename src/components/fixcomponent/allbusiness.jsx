@@ -1,56 +1,50 @@
 import React,{useEffect,useState} from 'react'
-import {connect} from "react-redux";
 import {Link} from "react-router-dom"
 import {showbusinessdetails} from "../../actions/index"
 import firebasedb from "../../firebase/index";
+import {connect} from "react-redux"
+
+import {bindActionCreators} from "redux"
 import axios from "axios"
 
- function Showallbusiness() {
+ function Showallbusiness(props) {
 
 const [alldata,setalldata] = useState([])
 const [blank, setblank] = useState(true)
 
 useEffect(()=>{
   fetchdata()
+ showdetails()
+ 
+
 })
 
 
 
+
  var fetchdata =()=>{
-  axios.get('https://react-crud-9f4ad.firebaseio.com/businessdata.json').then(
-   
- ({data}) => {
+   props.showbusinessdetails()
+  }
 
-  const userArr = [];
- 
-   for (const key in data){
-   userArr.push({
-     datas:data[key],
-     key:key
-   })
-   if(userArr.length < 0 ||null||undefined){
-console.log("jhgf")
-setblank(true)
+  var showdetails =()=>{
+    if(props.showdata){
+      setalldata(props.showdata)
    }
-   else{
-    setblank(false)
- }
+   if(alldata.length <=0){
+     setblank(true)
+   }else{
+     setblank(false)
+   }
+    
+  } 
+
   
-  
-
- }
- setalldata(userArr)
-})}
-
- 
- 
-
 const deletedata = (e)=>{
   var key = e.key
   axios.delete(`https://react-crud-9f4ad.firebaseio.com/businessdata/${key}.json`).then( uers=>{
     fetchdata()
 
-    setblank(true)
+  
   })
  
 }
@@ -90,10 +84,16 @@ const deletedata = (e)=>{
 function mapStateToProps(state){
 
      return{
-         data:state
+       showdata:state.businessinfo.show
      }
+     
    }
+   
+    
+   function mapDispatchToProps(dispatch){
+    return bindActionCreators({showbusinessdetails},dispatch)
+    }
     
     
 
-export default connect(mapStateToProps,null)(Showallbusiness)
+export default connect(mapStateToProps,mapDispatchToProps)(Showallbusiness)
