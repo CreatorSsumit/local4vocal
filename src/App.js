@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Footer from "../src/components/fixcomponent/footer"
 
 import Home from "./components/fixcomponent/home "
 
@@ -20,7 +21,7 @@ class App extends Component {
     return (
       <div>
        <Home />
-       
+       <Footer />
       </div>
     )
   }

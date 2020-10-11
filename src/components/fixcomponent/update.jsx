@@ -85,14 +85,7 @@ const key = daata[0].key
     )
 }
 
-function mapStateToProps(state){
 
-    return{
-      showdata:state.businessinfo.show
-    }
-    
-  }
-  
    
   function mapDispatchToProps(dispatch){
    return bindActionCreators(putdata,dispatch)

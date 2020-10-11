@@ -1,12 +1,12 @@
 
 import axios from "axios"
-import { connect } from "react-redux";
 
-var server = "https://react-crud-9f4ad.firebaseio.com/businessdata"
+
+var serverurl = "https://react-crud-9f4ad.firebaseio.com/businessdata"
 export async function showbusinessdetails(){
     var userArr = [] ;
 
-const {data} = await axios.get(`${server}.json`)
+const {data} = await axios.get(`${serverurl}.json`)
 
   
 for (const key in data){
@@ -23,12 +23,12 @@ for (const key in data){
 
 
 export async function deletedataaction(key){ 
-   await axios.delete(`${server}/${key}.json`)
+   await axios.delete(`${serverurl}/${key}.json`)
 }
 
 export async function putdata(data,key){ 
 
- await axios.put(`${server}/${key}.json`,data)
+ await axios.put(`${serverurl}/${key}.json`,data)
   
  }
 

@@ -9,7 +9,7 @@ import Reducers from "./reducers"
 import * as serviceWorker from './serviceWorker';
 import PromiseWare from "redux-promise";
 import Headers from "./components/fixcomponent/header"
-import Footer from "./components/fixcomponent/footer"
+
 import Register from "./components/fixcomponent/register"
 import Alluser from "./components/fixcomponent/allbusiness"
 const createStoreMiddeleWrare = applyMiddleware(PromiseWare)(createStore)
