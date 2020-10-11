@@ -9,18 +9,18 @@ class App extends Component {
     value:false
   }
 
-change=()=>{
- this.setState({
-   value:!this.state.value
- })
- console.log(this.state.value)
-}
+// change=()=>{
+//  this.setState({
+//    value:!this.state.value
+//  })
+//  console.log(this.state.value)
+// }
 
   render() {
     return (
       <div>
        <Home />
-       <button onClick={this.change}> hello</button>
+       
       </div>
     )
   }
