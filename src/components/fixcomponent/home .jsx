@@ -13,7 +13,7 @@ export default function Home() {
       <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Local For Vocal</h5>
       <h2 class="card-title h2 my-4 py-2">Small business for U R u Excited</h2>
       <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae cumque et quo impedit.</p>
-      <Link to="/register" class="btn btn-outline-secondary peach-gradient"><i class="fas fa-clone left"></i> <u>Register</u> </Link>
+      <Link to="/register" class="btn btn-outline-secondary  text-dark"><i class="fas fa-clone left"></i> <u>Register</u> </Link>
 
     </div>
   </div>
