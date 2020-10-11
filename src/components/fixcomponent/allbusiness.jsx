@@ -48,13 +48,16 @@ setsingledata(uniquedata)
 
 }
 
-
+var goback =()=>{
+  setupdateview(!updateview)
+  console.log(updateview)
+}
 
 
   return (
         <div> 
          {blank ?  <h5 className="card-title p-5 text-center">No User Registred </h5> : null}
-        {updateview ? <Update updta={singledata} /> : alldata.map((e)=>{
+        {updateview ? <Update updta={singledata} moveback={goback} /> : alldata.map((e)=>{
           return(<div>
            <div className="row">
         

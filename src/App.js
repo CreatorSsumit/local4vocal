@@ -1,38 +1,30 @@
 import React, { Component } from 'react';
-import {connect} from "react-redux"
-import {latestNews , othernews} from "./actions/index"
-import {bindActionCreators} from "redux";
+
 import Home from "./components/fixcomponent/home "
 
 
 class App extends Component {
 
+  state={
+    value:false
+  }
+
+change=()=>{
+ this.setState({
+   value:!this.state.value
+ })
+ console.log(this.state.value)
+}
 
   render() {
     return (
       <div>
        <Home />
+       <button onClick={this.change}> hello</button>
       </div>
     )
   }
 }
-
-
-
-
-// function mapStateToProps(state){
-
-//   return{
-//       articles:state.articles
-//   }
-// }
-
-
-
-
-// function mapDispatchToProps(dispatch){
-// return bindActionCreators({latestNews,othernews},dispatch)
-// }
 
 
 export default App

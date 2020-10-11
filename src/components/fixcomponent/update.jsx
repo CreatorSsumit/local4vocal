@@ -34,7 +34,7 @@ const key = daata[0].key
 
         putdata(updatedata,key)
         setcomplete(true)
-        
+        props.moveback()
       };
 
     return (
