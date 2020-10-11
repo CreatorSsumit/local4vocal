@@ -50,7 +50,7 @@ setsingledata(uniquedata)
 
 var goback =()=>{
   setupdateview(!updateview)
-  console.log(updateview)
+  fetchdata()
 }
 
 
